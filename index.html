@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante delicioso</title>
+  <link rel="stylesheet" href="styler.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Restaurante delicioso</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre nosotros</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Bienvenido a nuestro restaurante</h1>
+      <p>Disfruta de nuestros platos deliciosos y ambiente acogedor.</p>
+      <a href="#menu" class="btn">Ver menú</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>Sobre nosotros</h2>
+      <p>El Restaurante delicioso es conocido por su excelente cocina y ambiente acogedor. Nuestro equipo de chefs talentosos prepara platos deliciosos utilizando ingredientes frescos y de alta calidad. Ya sea que busques una cena romántica, una comida de negocios o una reunión con amigos, nuestro restaurante es el lugar perfecto.</p>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="container">
+      <h2>Nuestro menú</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="Imagenes/Sin título.jpg" alt="Plato 1">
+          <h3>Plato 1</h3>
+          <p>Descripción del plato 1</p>
+        </div>
+        <div class="menu-item">
+          <img src="Imagenes/Pizza.jpg" alt="Plato 2">
+          <h3>Plato 2</h3>
+          <p>Descripción del plato 2</p>
+        </div>
+        <div class="menu-item">
+          <img src="Imagenes/Hamburgesa.jpg" alt="Plato 3">
+          <h3>Plato 3</h3>
+          <p>Descripción del plato 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>Estamos ubicados en una ubicación conveniente y estamos abiertos todos los días. No dudes en contactarnos para hacer una reserva o para obtener más información sobre nuestros servicios.</p>
+      <p>Teléfono: 123-456-7890</p>
+      <p>Correo electrónico: info@restaurantedelicioso.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Restaurante delicioso &copy; 2023. Todos los derechos reservados.</p>
+    </div>
+    <h2>Realizar Pedido</h2>
+
+  <form id="order-form">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="order">Pedido:</label>
+    <input type="text" id="order" name="order" required>
+
+    <label for="address">Dirección:</label>
+    <input type="text" id="address" name="address" required>
+
+    <button type="submit">Enviar Pedido</button>
+  </form>
+
+  <script src="script.js"></script>
+  <script>
+    // Función para mostrar la alerta de agradecimiento
+    function mostrarAgradecimiento() {
+      var name = document.getElementById("name").value;
+      alert("¡Gracias por hacer este pedido, " + name + "!");
+    }
+
+    // Obtener referencia al formulario
+    var form = document.getElementById("order-form");
+
+    // Agregar evento de envío al formulario
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar el envío del formulario
+
+      // Realizar la validación
+      var name = document.getElementById("name").value;
+      var order = document.getElementById("order").value;
+      var address = document.getElementById("address").value;
+
+      if (name === "" || order === "" || address === "") {
+        alert("Por favor, completa todos los campos.");
+      } else {
+        mostrarAgradecimiento(); // Mostrar alerta de agradecimiento
+        form.reset(); // Reiniciar el formulario
+      }
+    });
+  </script>
+  </footer>
+</body>
+</html>
